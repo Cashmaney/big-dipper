@@ -345,7 +345,7 @@ export default class Proposal extends Component {
               <title>
                 {this.props.proposal.content.value.title}
                 {' '}
-                | The Big Dipper
+                | The Secret Explorer
               </title>
               <meta name="description" content={this.props.proposal.content.value.description} />
             </Helmet>

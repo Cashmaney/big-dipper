@@ -78,8 +78,8 @@ export default class BlocksTable extends Component {
       return (
         <div>
           <Helmet>
-            <title>Latest Blocks on Cosmos Hub | The Big Dipper</title>
-            <meta name="description" content="Latest blocks committed by validators on Cosmos Hub" />
+            <title>Latest Blocks on The Secret Network</title>
+            <meta name="description" content="Latest blocks committed by validators on The Secret Network" />
           </Helmet>
           <Row>
             <Col md={3} xs={12}>

@@ -191,7 +191,7 @@ export default class Validator extends Component {
             <title>
               { moniker }
               {' '}
-              - Cosmos Validator | The Big Dipper
+              - Secret Network Validator | The Secret Explorer
             </title>
             <meta name="description" content={details} />
           </Helmet>

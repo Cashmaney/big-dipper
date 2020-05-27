@@ -30,8 +30,8 @@ export default class Proposals extends Component {
     return (
       <div>
         <Helmet>
-          <title>Governance Proposals on Cosmos Hub | The Big Dipper</title>
-          <meta name="description" content="Cosmos Hub incorporates on-chain governance. Come to see how on-chain governance can be achieved on The Big Dipper." />
+          <title>Governance Proposals on The Secret Network</title>
+          <meta name="description" content="The Secret Network incorporates on-chain governance. Come to see how on-chain governance can be achieved on The Secret Explorer." />
         </Helmet>
         <Row>
           <Col md={3} xs={12}>

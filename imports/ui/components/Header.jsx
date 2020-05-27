@@ -164,21 +164,17 @@ export default class Header extends Component {
       return (
         <Navbar color="primary" dark expand="lg" fixed="top" id="header">
           <NavbarBrand tag={Link} to="/">
-            <img src="/img/big-dipper.svg" className="img-fluid logo" />
+            <img src="/img/Secret-NoBG.png" className="img-fluid logo" alt="" />
             {' '}
             <span className="d-none d-xl-inline-block">
               <T>navbar.siteName</T>
 &nbsp;
             </span>
-            <Badge color="secondary">
-              <T>navbar.version</T>
-            </Badge>
             {' '}
-
           </NavbarBrand>
           <UncontrolledDropdown className="d-inline text-nowrap">
             <DropdownToggle caret={(this.state.networks !== '')} tag="span" size="sm" id="network-nav">
-              {Meteor.settings.public.chainId}
+              {Meteor.settings.public.revision}
             </DropdownToggle>
             {this.state.networks}
           </UncontrolledDropdown>
@@ -259,8 +255,8 @@ export default class Header extends Component {
               </NavItem>
               <NavItem>
                 <UncontrolledDropdown inNavbar>
-                  <DropdownToggle nav caret>
-                    <T>navbar.lang</T>
+                  <DropdownToggle nav>
+                    <i className="material-icons large d-inline">language</i>
                   </DropdownToggle>
                   <DropdownMenu right>
                     <DropdownItem onClick={(e) => this.handleLanguageSwitch('en-US', e)}>

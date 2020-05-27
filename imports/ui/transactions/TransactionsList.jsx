@@ -85,8 +85,8 @@ export default class Transactions extends Component {
       return (
         <div id="transactions">
           <Helmet>
-            <title>Latest Transactions on Cosmos Hub | The Big Dipper</title>
-            <meta name="description" content="See what is happening on Cosmos Hub" />
+            <title>Latest Transactions on The Secret Network</title>
+            <meta name="description" content="See what is happening on the Secret Network" />
           </Helmet>
           <Row>
             <Col md={3} xs={12}>
