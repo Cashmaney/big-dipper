@@ -217,6 +217,7 @@ activities:
     withTitle: 'con titolo'
     withA: 'con un (male) / una (female)'
 messageTypes:
+    swap: 'Swap'
     send: 'Invia'
     multiSend: 'Invio multipo'
     createValidator: 'Crea un validatore'

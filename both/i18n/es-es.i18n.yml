@@ -216,6 +216,7 @@ activities:
     withTitle: 'con el título'
     withA: 'con'
 messageTypes:
+    swap: 'Swap'
     send: 'Enviar'
     multiSend: 'Multi Envío'
     createValidator: 'Crear validador'

@@ -6,6 +6,13 @@ const T = i18n.createComponent();
 
 export const MsgType = (props) => {
   switch (props.type) {
+  // tokenswap
+  case 'tokenswap/TokenSwap':
+    return (
+        <Badge color="success">
+          <T>messageTypes.swap</T>
+        </Badge>
+    );
   // bank
   case 'cosmos-sdk/MsgSend':
     return (

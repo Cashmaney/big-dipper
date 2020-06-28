@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import i18n from 'meteor/universe:i18n';
@@ -112,6 +113,25 @@ export default class Activites extends Component {
           <T>common.fullStop</T>
         </p>
       );
+    case 'tokenswap/TokenSwap':
+      return (
+        <p>
+          {(this.props.invalid) ? <T>activities.failedTo</T> : ''}
+          <MsgType type={msg.type} />
+          {' '}
+          <em className="text-warning">
+            {new Coin(parseInt(msg.value.AmountENG, 10) / 100, 'uscrt').toString()}
+          </em>
+          {' for '}
+          <Account address={msg.value.Receiver} />
+          {' '}
+          {' | see on  '}
+          {!(this.props.invalid) ? <a href={`https://etherscan.io/tx/${msg.value.BurnTxHash}`}>
+            {' Etherscan '}
+          </a> : ''}
+        </p>
+      );
+
     case 'cosmos-sdk/MsgEditValidator':
       return (
         <p>

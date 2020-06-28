@@ -216,6 +216,7 @@ activities:
     withTitle: '治理提案主題為'
     withA: '投了'
 messageTypes:
+    swap: 'Swap'
     send: '發送'
     multiSend: '多重發送'
     createValidator: '建立驗證人'
