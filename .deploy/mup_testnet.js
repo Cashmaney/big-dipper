@@ -1,8 +1,8 @@
 module.exports = {
     servers: {
         one: {
-            host: '35.239.166.231',
-            username: 'itzygro',
+            host: '51.105.52.99',
+            username: 'bob',
         }
     },
     app: {
@@ -18,7 +18,7 @@ module.exports = {
             serverOnly: true
         },
         env: {
-            ROOT_URL: 'https://testnet.scrt.cashmaney.com',
+            ROOT_URL: 'https://explorer.int.testnet.enigma.co',
             MONGO_URL: 'mongodb://localhost/meteor'
         }
     },
@@ -29,13 +29,13 @@ module.exports = {
         }
     },
     proxy: {
-        domains: 'testnet.scrt.cashmaney.com',
+        domains: 'explorer.int.testnet.enigma.co',
         ssl: {
             // Enable let's encrypt to create free certificates.
             // The email is used by Let's Encrypt to notify you when the
             // certificates are close to expiring.
-            letsEncryptEmail: 'itzik@keytango.io',
-            forceSSL: true
+            letsEncryptEmail: 'itzik@enigma.co',
+            forceSSL: false
         }
     }
 };

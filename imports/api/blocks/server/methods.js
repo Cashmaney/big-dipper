@@ -240,11 +240,22 @@ Meteor.methods({
 
             const startGetValidatorsTime = new Date();
             // update chain status
-            url = `${RPC}/validators?height=${height}`;
+            url = `${LCD}/validatorsets/${height}`;
             response = HTTP.get(url);
             console.log(url);
             const validators = JSON.parse(response.content);
             validators.result.block_height = parseInt(validators.result.block_height);
+
+            for (let v of validators.result.validators) {
+              v.pub_key = {
+                type: 'tendermint/PubKeyEd25519',
+                value: Meteor.call('bech32ToPubkey', v.pub_key),
+              };
+              // console.log(`NEW PUBKEY: ${JSON.stringify(v.pub_key)}`)
+              v.address = Meteor.call('bech32ToPubkeyHex', v.address).toUpperCase();
+              // console.log(`NEW ADDRESS: ${v.address}`)
+            }
+
             ValidatorSets.insert(validators.result);
 
             blockData.validatorsCount = validators.result.validators.length;

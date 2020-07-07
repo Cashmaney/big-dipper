@@ -28,6 +28,10 @@ Meteor.methods({
     const buffer = Buffer.from(bech32.fromWords(bech32.decode(pubkey).words));
     return buffer.slice(pubkeyAminoPrefix.length).toString('base64');
   },
+  bech32ToPubkeyHex(pubkey) {
+    const buffer = Buffer.from(bech32.fromWords(bech32.decode(pubkey).words));
+    return buffer.toString('hex');
+  },
   getDelegator(operatorAddr) {
     const address = bech32.decode(operatorAddr);
     return bech32.encode(Meteor.settings.public.bech32PrefixAccAddr, address.words);
