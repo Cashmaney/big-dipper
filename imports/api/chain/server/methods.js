@@ -61,7 +61,7 @@ Meteor.methods({
         return `no updates (getting block ${chain.latestBlockHeight} at block ${latestState.height})`;
       }
 
-      url = `${RPC}/validators`;
+      url = `${RPC}/validators?per_page=100`;
       response = HTTP.get(url);
       let validators = JSON.parse(response.content);
       validators = validators.result.validators;
