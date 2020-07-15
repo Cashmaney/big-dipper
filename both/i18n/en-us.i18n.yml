@@ -217,6 +217,10 @@ activities:
     withTitle: 'with title'
     withA: 'with a'
 messageTypes:
+    register: 'Register'
+    wasmStore: 'Store Contract Code'
+    wasmExecute: 'Execute Contract'
+    wasmInit: 'Initialize Contract'
     swap: 'Swap'
     send: 'Send'
     multiSend: 'Multi Send'

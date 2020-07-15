@@ -217,6 +217,10 @@ activities:
     withTitle: 'con titolo'
     withA: 'con un (male) / una (female)'
 messageTypes:
+    register: 'Register'
+    wasmStore: 'Store Contract Code'
+    wasmExecute: 'Execute Contract'
+    wasmInit: 'Initialize Contract'
     swap: 'Swap'
     send: 'Invia'
     multiSend: 'Invio multipo'

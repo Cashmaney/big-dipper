@@ -6,6 +6,30 @@ const T = i18n.createComponent();
 
 export const MsgType = (props) => {
   switch (props.type) {
+  case 'reg/authenticate':
+      return (
+          <Badge color="success">
+              <T>messageTypes.register</T>
+          </Badge>
+      )
+  case 'wasm/store-code':
+    return (
+        <Badge color="success">
+          <T>messageTypes.wasmStore</T>
+        </Badge>
+    );
+  case 'wasm/instantiate':
+    return (
+        <Badge color="success">
+          <T>messageTypes.wasmInit</T>
+        </Badge>
+    );
+  case 'wasm/execute':
+    return (
+        <Badge color="success">
+          <T>messageTypes.wasmExecute</T>
+        </Badge>
+    );
   // tokenswap
   case 'tokenswap/TokenSwap':
     return (

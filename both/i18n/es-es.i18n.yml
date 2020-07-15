@@ -216,6 +216,10 @@ activities:
     withTitle: 'con el título'
     withA: 'con'
 messageTypes:
+    register: 'Register'
+    wasmStore: 'Store Contract Code'
+    wasmExecute: 'Execute Contract'
+    wasmInit: 'Initialize Contract'
     swap: 'Swap'
     send: 'Enviar'
     multiSend: 'Multi Envío'

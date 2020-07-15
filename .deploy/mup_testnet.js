@@ -1,7 +1,7 @@
 module.exports = {
     servers: {
         one: {
-            host: '51.105.52.99',
+            host: '51.132.239.31',
             username: 'bob',
         }
     },
@@ -18,7 +18,7 @@ module.exports = {
             serverOnly: true
         },
         env: {
-            ROOT_URL: 'https://explorer.int.testnet.enigma.co',
+            ROOT_URL: 'https://explorer.pub.testnet.enigma.co',
             MONGO_URL: 'mongodb://localhost/meteor'
         }
     },
@@ -29,7 +29,7 @@ module.exports = {
         }
     },
     proxy: {
-        domains: 'explorer.int.testnet.enigma.co',
+        domains: 'explorer.pub.testnet.enigma.co',
         ssl: {
             // Enable let's encrypt to create free certificates.
             // The email is used by Let's Encrypt to notify you when the

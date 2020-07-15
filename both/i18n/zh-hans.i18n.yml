@@ -216,6 +216,10 @@ activities:
     withTitle: '治理提案主题为'
     withA: '投了'
 messageTypes:
+    register: 'Register'
+    wasmStore: 'Store Contract Code'
+    wasmExecute: 'Execute Contract'
+    wasmInit: 'Initialize Contract'
     swap: 'Swap'
     send: '发送'
     multiSend: '多重发送'

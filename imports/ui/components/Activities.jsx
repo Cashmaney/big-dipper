@@ -62,7 +62,7 @@ export default class Activites extends Component {
 
   render() {
     // console.log(this.props);
-    const { msg } = this.props;
+    const { msg, events } = this.props;
     switch (msg.type) {
     // bank
     case 'cosmos-sdk/MsgSend':
@@ -85,6 +85,15 @@ export default class Activites extends Component {
             <Account address={msg.value.to_address} />
           </span>
           <T>common.fullStop</T>
+        </p>
+      );
+    case 'reg/authenticate':
+      return (
+        <p>
+          {(this.props.invalid) ? <T>activities.failedTo</T> : ''}
+          <MsgType type={msg.type} />
+          {' from '}
+          <Account address={msg.value.sender} />
         </p>
       );
     case 'cosmos-sdk/MsgMultiSend':
@@ -113,6 +122,59 @@ export default class Activites extends Component {
           <T>common.fullStop</T>
         </p>
       );
+    case 'wasm/store-code':
+      return (
+        <p>
+          {(this.props.invalid) ? <T>activities.failedTo</T> : ''}
+          <MsgType type={msg.type} />
+          {' from '}
+          <Account address={msg.value.sender} />
+          {' code id '}
+          <em className="text-warning">
+            { events.attributes[3].value }
+          </em>
+        </p>
+      );
+    case 'wasm/instantiate':
+      return (
+        <p>
+          {(this.props.invalid) ? <T>activities.failedTo</T> : ''}
+          <MsgType type={msg.type} />
+          {' from '}
+          <Account address={msg.value.sender} />
+          {', code id '}
+          <em className="text-warning">
+            { msg.value.code_id }
+          </em>
+          {', label '}
+          <em className="text-warning">
+            { msg.value.label }
+          </em>
+          {', contract address '}
+          <Account address={events.attributes[4].value} />
+        </p>
+      );
+    case 'wasm/execute':
+      return (
+        <p>
+          {(this.props.invalid) ? <T>activities.failedTo</T> : ''}
+          <MsgType type={msg.type} />
+          {' from '}
+          <Account address={msg.value.sender} />
+          {' to contract address: '}
+          <Account address={msg.value.contract} />
+          {msg.value.sent_funds.length
+            ? (
+              <div>
+                {' sent funds: '}
+                <em className="text-warning">
+                  { new Coin(parseInt(msg.value.sent_funds[0].amount, 10) / 100, 'uscrt').toString() }
+                </em>
+              </div>
+            )
+            : null}
+        </p>
+      );
     case 'tokenswap/TokenSwap':
       return (
         <p>
@@ -126,9 +188,11 @@ export default class Activites extends Component {
           <Account address={msg.value.Receiver} />
           {' '}
           {' | see on  '}
-          {!(this.props.invalid) ? <a href={`https://etherscan.io/tx/${msg.value.BurnTxHash}`}>
-            {' Etherscan '}
-          </a> : ''}
+          {!(this.props.invalid) ? (
+            <a href={`https://etherscan.io/tx/${msg.value.BurnTxHash}`}>
+              {' Etherscan '}
+            </a>
+          ) : ''}
         </p>
       );
 

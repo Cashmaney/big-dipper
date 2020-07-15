@@ -18,14 +18,14 @@ showdown.setFlavor('github');
 
 export const TransactionRow = (props) => {
   const { tx } = props;
-
+  const evts = tx.hasOwnProperty('logs') ? tx.logs[0].events[0] : undefined;
   return (
     <SentryBoundary>
       <Row className={(tx.code) ? 'tx-info invalid' : 'tx-info'}>
         <Col xs={12} lg={7} className="activity">
           {(tx.tx.value.msg && tx.tx.value.msg.length > 0) ? tx.tx.value.msg.map((msg, i) => (
             <Card body key={i}>
-              <Activities msg={msg} invalid={(!!tx.code)} events={tx.events} />
+              <Activities msg={msg} invalid={(!!tx.code)} events={evts} />
             </Card>
           )) : ''}
         </Col>

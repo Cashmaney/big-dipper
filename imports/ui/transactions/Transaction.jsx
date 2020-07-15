@@ -33,6 +33,7 @@ export default class Transaction extends Component {
 
     if (this.props.transactionExist) {
       const tx = this.props.transaction;
+      const evts = tx.hasOwnProperty('logs') ? tx.logs[0].events[0] : undefined;
       return (
         <Container id="transaction">
           <Helmet>
@@ -132,7 +133,8 @@ export default class Transaction extends Component {
           </Card>
           {(tx.tx.value.msg && tx.tx.value.msg.length > 0) ? tx.tx.value.msg.map((msg, i) => (
             <Card body key={i}>
-              <Activities msg={msg} invalid={(!!tx.code)} events={tx.events} denom={this.denom} />
+
+              <Activities msg={msg} invalid={(!!tx.code)} events={evts} denom={this.denom} />
             </Card>
           )) : ''}
         </Container>
