@@ -1,0 +1,47 @@
+{
+  "public":{
+    "chainName": "Enigma Public Testnet",
+    "chainId": "enigma-pub-testnet-2",
+    "gtm": "",
+    "slashingWindow": 1000,
+    "uptimeWindow": 100,
+    "initialPageSize": 30,
+    "bech32PrefixAccAddr": "secret",
+    "bech32PrefixAccPub": "secretpub",
+    "bech32PrefixValAddr": "secretvaloper",
+    "bech32PrefixValPub": "secretvaloperpub",
+    "bech32PrefixConsAddr": "secretvalcons",
+    "bech32PrefixConsPub": "secretvalconspub",
+    "bondDenom": "uscrt",
+    "powerReduction": 1000000,
+    "coins": [
+      {
+        "denom": "uscrt",
+        "displayName": "SCRT",
+        "displayNamePlural": "SCRTS",
+        "fraction": 1000000
+      }
+    ],
+    "gasPrice": 0.02
+  },
+  "genesisFile": "https://github.com/enigmampc/SecretNetwork/releases/download/v0.7.0/genesis.json",
+  "remote":{
+    "rpc":"http://bootstrap.pub.testnet.enigma.co:26657",
+    "lcd":"https://bootstrap.pub.testnet.enigma.co"
+  },
+  "debug": {
+    "startTimer": true,
+    "readGenesis": true
+  },
+  "params":{
+    "startHeight": 0,
+    "defaultBlockTime": 5000,
+    "blockInterval": 15000,
+    "consensusInterval": 1000,
+    "statusInterval":7500,
+    "signingInfoInterval": 1800000,
+    "proposalInterval": 5000,
+    "missedBlocksInterval": 60000,
+    "delegationInterval": 900000
+  }
+}
