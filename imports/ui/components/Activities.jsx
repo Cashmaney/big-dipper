@@ -129,10 +129,13 @@ export default class Activites extends Component {
           <MsgType type={msg.type} />
           {' from '}
           <Account address={msg.value.sender} />
-          {' code id '}
-          <em className="text-warning">
-            { events.attributes[3].value }
-          </em>
+            {!(this.props.invalid) ?
+                (<>
+                  {' code id '}
+                  <em className="text-warning">
+                    { events.attributes[3].value }
+                  </em>
+                </>) : null }
         </p>
       );
     case 'wasm/instantiate':
@@ -146,12 +149,17 @@ export default class Activites extends Component {
           <em className="text-warning">
             { msg.value.code_id }
           </em>
-          {', label '}
-          <em className="text-warning">
-            { msg.value.label }
-          </em>
-          {', contract address '}
-          <Account address={events.attributes[4].value} />
+          {!(this.props.invalid)
+            ? (
+              <>
+                {', label '}
+                <em className="text-warning">
+                  { msg.value.label }
+                </em>
+                {', contract address '}
+                <Account address={events.attributes[4].value} />
+              </>
+            ) : null }
         </p>
       );
     case 'wasm/execute':
