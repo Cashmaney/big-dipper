@@ -277,6 +277,9 @@ export default class Header extends Component {
                     <DropdownItem onClick={(e) => this.handleLanguageSwitch('zh-Hans', e)}>
                       <T>navbar.simChinese</T>
                     </DropdownItem>
+                    <DropdownItem onClick={(e) => this.handleLanguageSwitch('pt-BR', e)}>
+                      <T>navbar.portuguese</T>
+                    </DropdownItem>
                   </DropdownMenu>
                 </UncontrolledDropdown>
               </NavItem>

@@ -38,6 +38,7 @@ navbar:
     polish: "Polski"
     chinese: "中文（繁）"
     simChinese: "中文（简）"
+    portuguese: "Português"
     license: 'LICENCJA'
     forkMe: 'Fork me!'
 consensus:

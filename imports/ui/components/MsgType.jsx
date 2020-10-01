@@ -12,19 +12,19 @@ export const MsgType = (props) => {
               <T>messageTypes.register</T>
           </Badge>
       )
-  case 'wasm/store-code':
+  case 'wasm/MsgStoreCode':
     return (
         <Badge color="success">
           <T>messageTypes.wasmStore</T>
         </Badge>
     );
-  case 'wasm/instantiate':
+  case 'wasm/MsgInstantiateContract':
     return (
         <Badge color="success">
           <T>messageTypes.wasmInit</T>
         </Badge>
     );
-  case 'wasm/execute':
+  case 'wasm/MsgExecuteContract':
     return (
         <Badge color="success">
           <T>messageTypes.wasmExecute</T>
