@@ -176,7 +176,7 @@ export default class Activites extends Component {
               <div>
                 {' sent funds: '}
                 <em className="text-warning">
-                  { new Coin(parseInt(msg.value.sent_funds[0].amount, 10) / 100, 'uscrt').toString() }
+                  { new Coin(parseInt(msg.value.sent_funds[0].amount, 10), 'uscrt').toString() }
                 </em>
               </div>
             )
