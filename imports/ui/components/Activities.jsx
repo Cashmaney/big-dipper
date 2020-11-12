@@ -122,7 +122,7 @@ export default class Activites extends Component {
           <T>common.fullStop</T>
         </p>
       );
-    case 'wasm/store-code':
+    case 'wasm/MsgStoreCode':
       return (
         <p>
           {(this.props.invalid) ? <T>activities.failedTo</T> : ''}
@@ -138,7 +138,7 @@ export default class Activites extends Component {
                 </>) : null }
         </p>
       );
-    case 'wasm/instantiate':
+    case 'wasm/MsgInstantiateContract':
       return (
         <p>
           {(this.props.invalid) ? <T>activities.failedTo</T> : ''}
@@ -162,7 +162,7 @@ export default class Activites extends Component {
             ) : null }
         </p>
       );
-    case 'wasm/execute':
+    case 'wasm/MsgExecuteContract':
       return (
         <p>
           {(this.props.invalid) ? <T>activities.failedTo</T> : ''}
